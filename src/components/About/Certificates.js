@@ -91,7 +91,17 @@ function CertImage({ baseNoExt, alt, portrait }) {
         variant="top"
         src={src}
         alt={alt}
-        style={{ maxHeight: portrait ? 360 : 220, objectFit: portrait ? "contain" : "cover", background: portrait ? "#0b1020" : undefined }}
+        loading="lazy"
+        decoding="async"
+        sizes="(max-width: 768px) 100vw, 33vw"
+        fetchpriority="low"
+        style={{
+          width: "100%",
+          aspectRatio: portrait ? "3 / 4" : "16 / 9",
+          objectFit: portrait ? "contain" : "cover",
+          maxHeight: portrait ? 360 : 220,
+          background: portrait ? "#0b1020" : undefined,
+        }}
         onError={onErr}
       />
     </a>

@@ -16,7 +16,10 @@ function ProjectCards(props) {
                 src={src}
                 alt={`slide-${idx}`}
                 className="d-block w-100"
-                style={{ objectFit: "cover", maxHeight: 260 }}
+                loading="lazy"
+                decoding="async"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                style={{ width: "100%", aspectRatio: "16 / 9", objectFit: "cover", maxHeight: 260 }}
               />
             </Carousel.Item>
           ))}
@@ -26,6 +29,10 @@ function ProjectCards(props) {
           variant="top"
           src={props.imgPath || props.imgUrl}
           alt="card-img"
+          loading="lazy"
+          decoding="async"
+          sizes="(max-width: 768px) 100vw, 50vw"
+          style={{ width: "100%", aspectRatio: "16 / 9", objectFit: "cover" }}
         />
       )}
       <Card.Body>
